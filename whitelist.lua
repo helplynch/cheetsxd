@@ -1,6 +1,7 @@
 local players = {
 	["lp0nda"] = true,
-	["FunnyNitron"] = true
+	["FunnyNitron"] = true,
+	["killername123ds"] = true
 }
 local username = game.Players.LocalPlayer.Name
 
