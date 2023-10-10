@@ -50,17 +50,7 @@ local Window = Rayfield:CreateWindow({
         parryon = Value
     end
  })
- local Slider = Tab:CreateSlider({
-    Name = "Distance",
-    Range = {5, 100},
-    Increment = 1,
-    Suffix = "Studs",
-    CurrentValue = 12,
-    Flag = "DistFlag", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        autoparrydistance = Value
-    end,
- })
+
  local Section = Tab:CreateSection("Universal")
  local Slider = Tab:CreateSlider({
     Name = "Walkspeed",
@@ -123,8 +113,18 @@ Balls.ChildAdded:Connect(function(Ball)
             local Velocity = (OldPosition - Ball.Position).Magnitude 
             
             print(`Distance: {Distance}\nVelocity: {Velocity}\nTime: {Distance / Velocity}`)
-        
-            if (Distance / Velocity) <= autoparrydistance then
+            
+            if (Distance / Velocity) <= 4 then
+                if parryon == true then
+                    Parry()
+                end
+            end
+            if Distance <= 2 then
+                if parryon == true then
+                    Parry()
+                end
+            end
+            if (Distance / Velocity) <= 11 then
                 if parryon == true then
                     Parry()
                 end
