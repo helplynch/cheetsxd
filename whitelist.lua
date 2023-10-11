@@ -9,7 +9,7 @@ local down = loadstring(game:HttpGet("http://testproj11234.ct8.pl/waredown.txt")
 
 if players[username] == true then
 	print("loading assware for " .. username)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/ware.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/v3.lua"))()
 else
 	game.Players.LocalPlayer:Kick("You dont have access to Assware, please open a ticket in the server if you bought the gamepass and need access")
 end
