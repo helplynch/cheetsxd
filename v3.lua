@@ -54,15 +54,6 @@ local Window = Rayfield:CreateWindow({
     end
  })
  Toggle:Set(false)
- local Toggle = Tab:CreateToggle({
-    Name = "Auto Ability",
-    CurrentValue = false,
-    Flag = "abilityflag", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        abilityon = Value
-    end
- })
- Toggle:Set(false)
 
  local Section = Tab:CreateSection("Universal")
  local Slider = Tab:CreateSlider({
@@ -185,13 +176,10 @@ Balls.ChildAdded:Connect(function(Ball)
     end)
 end)
 
-while wait(0.00005) do
+while wait(0.00003) do
     if Distance <= 1 then
         if autoclickeron == true then
             Parry()
         end
-    end
-    if abilityon == true then
-        Remotes:WaitForChild("AbilityButtonPress"):Fire()
     end
 end
