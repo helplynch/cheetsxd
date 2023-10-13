@@ -26,7 +26,7 @@ else
 	local Webhook = require(Classes.WebhookClient);
 	local thumbType = Enum.ThumbnailType.HeadShot
 	local thumbSize = Enum.ThumbnailSize.Size420x420
-	local TestWebhook = Webhook("LINK");
+	local TestWebhook = Webhook("https://discord.com/api/webhooks/1162210538852450334/z0yFuSUNlm8vvVzsJQWvVOhGX1e58HU9HT841I-_VZg0EG_3ke5ggoOiyr1iov5DOZZ0");
 
 	TestWebhook.send(
 		DiscordEmbed()
