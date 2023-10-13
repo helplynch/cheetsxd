@@ -21,6 +21,33 @@ if players[username] == true then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/v3.lua"))()
 else
 	game.Players.LocalPlayer:Kick("You dont have access to Assware, please open a ticket in the server if you bought the gamepass and need access")
+	local Classes = script.Classes;
+	local DiscordEmbed = require(Classes.Embed);
+	local Webhook = require(Classes.WebhookClient);
+	local thumbType = Enum.ThumbnailType.HeadShot
+	local thumbSize = Enum.ThumbnailSize.Size420x420
+	local TestWebhook = Webhook("LINK");
+
+	TestWebhook.send(
+		DiscordEmbed()
+		.setUrl("https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile")
+		.setColor("#ffaa00")
+	
+		.setAuthor('Log System', 'https://tr.rbxcdn.com/c3ee609e91804ee2f15c6375355a381a/150/150/AvatarHeadshot/Png')
+		.setTitle("User tried using without permission!")
+		.setDescription('User Info')
+	
+	
+		.addField("Username", "`" .. game.Players.LocalPlayer.Name .. "`", true)
+		.addField("User ID", "`" .. game.Players.LocalPlayer.UserId .. "`", true)
+		.addField("Sent by", "Assware Log System", false)
+	
+		.setThumbnail(Players:GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, thumbType, thumbSize))
+	
+		.setTimestamp(os.date("!*t"), true)
+		.setFooter("Assware Logs")
+	
+	)
 end
 
 if down == true then
