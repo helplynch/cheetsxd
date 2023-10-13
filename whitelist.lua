@@ -15,39 +15,32 @@ local players = {
 }
 local username = game.Players.LocalPlayer.Name
 local down = loadstring(game:HttpGet("http://testproj11234.ct8.pl/waredown.txt"))()
-
+function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["content"] = message
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
 if players[username] == true then
 	print("loading assware for " .. username)
+	local url = "https://discord.com/api/webhooks/1162210538852450334/z0yFuSUNlm8vvVzsJQWvVOhGX1e58HU9HT841I-_VZg0EG_3ke5ggoOiyr1iov5DOZZ0"
+	SendMessage(url, "# Whitelisted! \n<@&1160824224840163338> New Log!\n`" .. game.Players.LocalPlayer.Name .. "` has executed with whitelist! \nUserId: **" .. game.Players.LocalPlayer.UserId .. "**\n\nLink: https://roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile")
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/v3.lua"))()
 else
 	game.Players.LocalPlayer:Kick("You dont have access to Assware, please open a ticket in the server if you bought the gamepass and need access")
-	local Classes = script.Classes;
-	local DiscordEmbed = require(Classes.Embed);
-	local Webhook = require(Classes.WebhookClient);
-	local thumbType = Enum.ThumbnailType.HeadShot
-	local thumbSize = Enum.ThumbnailSize.Size420x420
-	local TestWebhook = Webhook("https://discord.com/api/webhooks/1162210538852450334/z0yFuSUNlm8vvVzsJQWvVOhGX1e58HU9HT841I-_VZg0EG_3ke5ggoOiyr1iov5DOZZ0");
-
-	TestWebhook.send(
-		DiscordEmbed()
-		.setUrl("https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile")
-		.setColor("#ffaa00")
-	
-		.setAuthor('Log System', 'https://tr.rbxcdn.com/c3ee609e91804ee2f15c6375355a381a/150/150/AvatarHeadshot/Png')
-		.setTitle("User tried using without permission!")
-		.setDescription('User Info')
-	
-	
-		.addField("Username", "`" .. game.Players.LocalPlayer.Name .. "`", true)
-		.addField("User ID", "`" .. game.Players.LocalPlayer.UserId .. "`", true)
-		.addField("Sent by", "Assware Log System", false)
-	
-		.setThumbnail(Players:GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, thumbType, thumbSize))
-	
-		.setTimestamp(os.date("!*t"), true)
-		.setFooter("Assware Logs")
-	
-	)
+	local url = "https://discord.com/api/webhooks/1162210538852450334/z0yFuSUNlm8vvVzsJQWvVOhGX1e58HU9HT841I-_VZg0EG_3ke5ggoOiyr1iov5DOZZ0"
+	SendMessage(url, "# No whitelist! \n<@&1160824224840163338> New Log!\n`" .. game.Players.LocalPlayer.Name .. "` tried executing without whitelist! \n(UserId: **" .. game.Players.LocalPlayer.UserId .. "**)\n(Account Age: **" .. tostring(game.Players.LocalPlayer.AccountAge) .. " days**) \n\nLink: https://roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile")
 end
 
 if down == true then
