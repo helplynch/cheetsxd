@@ -18,7 +18,8 @@ local players = {
 	["firsttolast1312"] = true,
 	["TakeshiSendo132"] = true,
 	["korn_234"] = true, 
-	["uub"] = true
+	["uub"] = true,
+	["Johnnyhere6"] = true
 }
 function SendMessage(url, message)
     local http = game:GetService("HttpService")
